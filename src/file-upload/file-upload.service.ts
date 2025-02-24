@@ -8,7 +8,7 @@ export class FileUploadService {
     }
 
     // validate file type only .h5
-    const allowedMimeTypes = ['application/octet-stream'];
+    const allowedMimeTypes = ['application/x-hdf5'];
     if (!allowedMimeTypes.includes(file.mimetype)) {
       throw new BadRequestException('invalid file type');
     }
