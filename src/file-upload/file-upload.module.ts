@@ -11,8 +11,7 @@ import { extname } from 'path';
       storage: diskStorage({
         destination: './uploads',
         filename: (req, file, cb) => {
-          const filename = `${Date.now()}-${file.originalname}`;
-          cb(null, filename);
+          cb(null, file.originalname);
         },
       }),
       fileFilter: (req, file, cb) => {

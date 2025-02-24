@@ -7,8 +7,8 @@ export class FileUploadService {
       throw new BadRequestException('No file uploaded');
     }
 
-    // validate file type only .h5
-    const allowedMimeTypes = ['application/x-hdf5'];
+    // allow all file types
+    const allowedMimeTypes = ['*/*'];
     if (!allowedMimeTypes.includes(file.mimetype)) {
       throw new BadRequestException('Invalid file type');
     }
